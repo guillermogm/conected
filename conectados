@@ -1,0 +1,8 @@
+#!/bin/sh
+
+for i in `who | tr -s " " | cut -f1,5 -d" "`
+   do
+        nombre=`getent passwd | grep $i | tr " " "_" | cut -f5 -d:`
+        echo "$i        $nombre"
+ done
+
